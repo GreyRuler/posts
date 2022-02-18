@@ -41,7 +41,8 @@ class WallServiceTest {
                          markedAsAds = true,
                          isFavorite = true,
                          donut = Donut(true, (0..10000).random(), Placeholder(), true, ""),
-                         postponedId = (0..10000).random()))
+                         postponedId = (0..10000).random(),
+                         attachment = null))
 
         assertTrue(WallService.array.any())
         WallService.clear()
@@ -83,7 +84,8 @@ class WallServiceTest {
             markedAsAds = true,
             isFavorite = true,
             donut = Donut(true, (0..10000).random(), Placeholder(), true, ""),
-            postponedId = (0..10000).random()))
+            postponedId = (0..10000).random(),
+            attachment = null))
         service.add(Post(id = UUID.randomUUID().toString(),
             fromIs = (0..10000).random(),
             createdBy = (0..10000).random(),
@@ -116,7 +118,8 @@ class WallServiceTest {
             markedAsAds = true,
             isFavorite = true,
             donut = Donut(true, (0..10000).random(), Placeholder(), true, ""),
-            postponedId = (0..10000).random()))
+            postponedId = (0..10000).random(),
+            attachment = null))
         val updateTrue = service.add(Post(id = UUID.randomUUID().toString(),
             fromIs = (0..10000).random(),
             createdBy = (0..10000).random(),
@@ -149,7 +152,8 @@ class WallServiceTest {
             markedAsAds = true,
             isFavorite = true,
             donut = Donut(true, (0..10000).random(), Placeholder(), true, ""),
-            postponedId = (0..10000).random()))
+            postponedId = (0..10000).random(),
+            attachment = null))
 
         val updateFalse = Post(id = UUID.randomUUID().toString(),
             fromIs = (0..10000).random(),
@@ -183,7 +187,8 @@ class WallServiceTest {
             markedAsAds = true,
             isFavorite = true,
             donut = Donut(true, (0..10000).random(), Placeholder(), true, ""),
-            postponedId = (0..10000).random())
+            postponedId = (0..10000).random(),
+            attachment = null)
 
         val resultFalse = service.update(updateFalse)
         val resultTrue = service.update(updateTrue)
@@ -229,7 +234,8 @@ class WallServiceTest {
             markedAsAds = true,
             isFavorite = true,
             donut = Donut(true, (0..10000).random(), Placeholder(), true, ""),
-            postponedId = (0..10000).random()))
+            postponedId = (0..10000).random(),
+            attachment = null))
 
         WallService.clear()
         assertTrue(WallService.array.isEmpty())

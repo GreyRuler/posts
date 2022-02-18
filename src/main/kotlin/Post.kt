@@ -25,7 +25,8 @@ data class Post(
     var markedAsAds: Boolean,
     var isFavorite: Boolean,
     var donut: Donut,
-    var postponedId: Int
+    var postponedId: Int,
+    var attachment: Attachment?
 )
 
 data class Comment(
