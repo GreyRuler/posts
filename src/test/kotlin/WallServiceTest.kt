@@ -44,7 +44,23 @@ class WallServiceTest {
                 markedAsAds = true,
                 isFavorite = true,
                 donut = Post.Donut(true, (0..10000).random(), Post.Donut.Placeholder(), true, ""),
-                postponedId = (0..10000).random()
+                postponedId = (0..10000).random(),
+                attachment = Photo(
+                    id = 1,
+                    albumId = 1,
+                    ownerId = 2,
+                    userId = 2,
+                    text = "",
+                    date = 1645875482,
+                    sizes = Photo.Sizes(
+                        type = "",
+                        url = "",
+                        width = 640,
+                        height = 480
+                    ),
+                    width = 480,
+                    height = 640
+                )
             )
         )
 
@@ -90,7 +106,58 @@ class WallServiceTest {
                 markedAsAds = true,
                 isFavorite = true,
                 donut = Post.Donut(true, (0..10000).random(), Post.Donut.Placeholder(), true, ""),
-                postponedId = (0..10000).random()
+                postponedId = (0..10000).random(),
+                attachment = Video(
+                    id = 1,
+                    ownerId = 1,
+                    title = "",
+                    description = "",
+                    duration = 0,
+                    image = null,
+                    firstFrame = null,
+                    date = 1645875797,
+                    addingDate = 10,
+                    views = 1,
+                    localViews = 1,
+                    comments = 1,
+                    player = "",
+                    platform = "",
+                    canAdd = true,
+                    isPrivate = 1,
+                    accessKey = "",
+                    processing = 1,
+                    isFavorite = false,
+                    canComment = true,
+                    canEdit = false,
+                    canLike = true,
+                    canRepost = true,
+                    canSubscribe = true,
+                    canAddToFaves = true,
+                    canAttachLink = true,
+                    width = 480,
+                    height = 640,
+                    userId = 1,
+                    converting = true,
+                    added = true,
+                    isSubscribed = true,
+                    repeat = 1,
+                    type = "video",
+                    balance = 1,
+                    liveStatus = "",
+                    live = 1,
+                    upcoming = 1,
+                    spectators = 2,
+                    likes = Post.Likes(
+                        count = 500,
+                        userLikes = true,
+                        canLike = true,
+                        canPublish = false
+                    ),
+                    reposts = Post.Reposts(
+                        count = 10,
+                        userReposted = true
+                    )
+                )
             )
         )
         val post2 = WallService.add(
@@ -129,7 +196,23 @@ class WallServiceTest {
                 markedAsAds = true,
                 isFavorite = true,
                 donut = Post.Donut(true, (0..10000).random(), Post.Donut.Placeholder(), true, ""),
-                postponedId = (0..10000).random()
+                postponedId = (0..10000).random(),
+                attachment = Photo(
+                    id = 1,
+                    albumId = 1,
+                    ownerId = 2,
+                    userId = 2,
+                    text = "",
+                    date = 1645875482,
+                    sizes = Photo.Sizes(
+                        type = "",
+                        url = "",
+                        width = 640,
+                        height = 480
+                    ),
+                    width = 480,
+                    height = 640
+                )
             )
         )
 
@@ -177,7 +260,38 @@ class WallServiceTest {
                 markedAsAds = true,
                 isFavorite = true,
                 donut = Post.Donut(true, (0..10000).random(), Post.Donut.Placeholder(), true, ""),
-                postponedId = (0..10000).random()
+                postponedId = (0..10000).random(),
+                attachment = File(
+                    id = 1,
+                    ownerId = 1,
+                    title = "title",
+                    size = 100,
+                    ext = "",
+                    url = "url",
+                    date = 1645875797,
+                    type = 1,
+                    preview = File.Preview(
+                        photo = File.PhotoFile(
+                            sizes = Photo.Sizes(
+                                type = "",
+                                url = "",
+                                width = 640,
+                                height = 480
+                            )
+                        ),
+                        graffiti = File.Graffiti(
+                            src = "",
+                            width = 640,
+                            height = 480
+                        ),
+                        audioMessage = File.AudioMessage(
+                            duration = 1,
+                            waveform = null,
+                            linkOgg = "",
+                            linkMp3 = ""
+                        )
+                    )
+                )
             )
         )
         val post2 = WallService.add(
@@ -216,7 +330,38 @@ class WallServiceTest {
                 markedAsAds = true,
                 isFavorite = true,
                 donut = Post.Donut(true, (0..10000).random(), Post.Donut.Placeholder(), true, ""),
-                postponedId = (0..10000).random()
+                postponedId = (0..10000).random(),
+                attachment = File(
+                    id = 1,
+                    ownerId = 1,
+                    title = "title",
+                    size = 100,
+                    ext = "",
+                    url = "url",
+                    date = 1645875797,
+                    type = 1,
+                    preview = File.Preview(
+                        photo = File.PhotoFile(
+                            sizes = Photo.Sizes(
+                                type = "",
+                                url = "",
+                                width = 640,
+                                height = 480
+                            )
+                        ),
+                        graffiti = File.Graffiti(
+                            src = "",
+                            width = 640,
+                            height = 480
+                        ),
+                        audioMessage = File.AudioMessage(
+                            duration = 1,
+                            waveform = null,
+                            linkOgg = "",
+                            linkMp3 = ""
+                        )
+                    )
+                )
             )
         )
         val post3 = Post(
@@ -254,7 +399,23 @@ class WallServiceTest {
             markedAsAds = true,
             isFavorite = true,
             donut = Post.Donut(true, (0..10000).random(), Post.Donut.Placeholder(), true, ""),
-            postponedId = (0..10000).random()
+            postponedId = (0..10000).random(),
+            attachment = Photo(
+                id = 1,
+                albumId = 1,
+                ownerId = 2,
+                userId = 2,
+                text = "",
+                date = 1645875482,
+                sizes = Photo.Sizes(
+                    type = "",
+                    url = "",
+                    width = 640,
+                    height = 480
+                ),
+                width = 480,
+                height = 640
+            )
         )
 
         val resultFalse = WallService.update(post3)
@@ -300,7 +461,15 @@ class WallServiceTest {
                 markedAsAds = true,
                 isFavorite = true,
                 donut = Post.Donut(true, (0..10000).random(), Post.Donut.Placeholder(), true, ""),
-                postponedId = (0..10000).random()
+                postponedId = (0..10000).random(),
+                attachment = Sticker(
+                    productId = 1,
+                    stickerId = 1,
+                    images = null,
+                    imagesWithBackground = null,
+                    animationUrl = "",
+                    isAllowed = true
+                )
             )
         )
 

@@ -43,7 +43,7 @@ object WallService {
                     isFavorite = post.isFavorite,
                     donut = post.donut,
                     postponedId = post.postponedId
-                    )
+                )
                 return true
             }
         }
