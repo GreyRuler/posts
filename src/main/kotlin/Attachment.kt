@@ -1,3 +1,1 @@
-interface Attachment {
-    val typeAttachment: String
-}
+interface Attachment

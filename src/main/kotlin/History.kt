@@ -7,7 +7,7 @@ class History(
     val isDeleted: Boolean,
     val canSee: Int,
     val seen: Int,
-    _type: String,
+    val type: String,
     val photo: Photo,
     val video: Video,
     val link: Link,
@@ -20,51 +20,21 @@ class History(
     val canComment: Boolean,
     val clickableStickers: ClickableStickers,
     val views: Int,
-    val accessKey: String
-) : Attachment {
-    override val typeAttachment: String = "history"
-    private val type: String
-    init {
-        if (arrayListOf("photo", "video").contains(_type)) {
-            type = _type
-        } else {
-            error("Не корректный тип данных")
-        }
-    }
-}
+    val accessKey: String) : Attachment {
 
-data class Link(
-    val text: String,
-    val url: String
-)
+    data class Link(
+        val text: String,
+        val url: String
+    )
 
-data class Replies(
-    val count: Int,
-    val new: Int
-)
+    data class Replies(
+        val count: Int,
+        val new: Int
+    )
 
-data class ClickableStickers(
-    val originalWidth: Int,
-    val originalHeight: Int,
-    val clickableStickers: Array<ClickableStickers>
-) {
-    override fun equals(other: Any?): Boolean {
-        if (this === other) return true
-        if (javaClass != other?.javaClass) return false
-
-        other as ClickableStickers
-
-        if (originalWidth != other.originalWidth) return false
-        if (originalHeight != other.originalHeight) return false
-        if (!clickableStickers.contentEquals(other.clickableStickers)) return false
-
-        return true
-    }
-
-    override fun hashCode(): Int {
-        var result = originalWidth
-        result = 31 * result + originalHeight
-        result = 31 * result + clickableStickers.contentHashCode()
-        return result
-    }
+    data class ClickableStickers(
+        val originalWidth: Int,
+        val originalHeight: Int,
+        val clickableStickers: Array<ClickableStickers>
+    )
 }
