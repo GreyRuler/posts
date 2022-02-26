@@ -10,7 +10,7 @@ class WallServiceTest {
 
         val post = WallService.add(
             Post(
-                id = 0,
+                id = null,
                 ownerId = 1,
                 fromId = (0..10000).random(),
                 createdBy = (0..10000).random(),
