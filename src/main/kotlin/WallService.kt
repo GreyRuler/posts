@@ -1,7 +1,7 @@
 object WallService {
 
     val list = mutableListOf<Post>()
-    const val MAXID = 0 // обусловленно предположением в 1 млрд постов
+    const val MAXID = 1_000_000_000 // обусловленно предположением в 1 млрд постов
 
     fun add(post: Post): Post {
         var id: Int
