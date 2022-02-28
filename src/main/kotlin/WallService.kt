@@ -1,27 +1,24 @@
 object WallService {
 
-    var array = mutableListOf<Post>()
-    var arrayID = mutableListOf<Int>()
+    val list = mutableListOf<Post>()
+    const val MAXID = 1_000_000_000 // обусловленно предположением в 1 млрд постов
 
     fun add(post: Post): Post {
+        var id: Int
+        do {
+            id = (0..MAXID).random()
+        } while (list.any { it.id == id })
 
-        var id = (0..100000).random()
-        while (arrayID.contains(id)) {
-            id = (0..100000).random()
-        }
-        arrayID += id
         val olderPost = post.copy(id = id)
-        arrayID += id
-
-        array += olderPost
+        list.add(olderPost)
 
         return olderPost
     }
 
     fun update(post: Post): Boolean {
-        for (postFromArr in array) {
+        for (postFromArr in list) {
             if (postFromArr.id == post.id) {
-                postFromArr.copy(ownerId = post.ownerId,
+                postFromArr.copy(
                     fromId = post.fromId,
                     createdBy = post.createdBy,
                     text = post.text,
@@ -48,9 +45,5 @@ object WallService {
             }
         }
         return false
-    }
-
-    fun clear() {
-        array = mutableListOf()
     }
 }

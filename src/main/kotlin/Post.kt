@@ -64,6 +64,4 @@ data class Post(
     ) {
         class Placeholder
     }
-
 }
-
