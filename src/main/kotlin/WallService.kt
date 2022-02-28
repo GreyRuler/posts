@@ -1,7 +1,7 @@
 object WallService {
 
     val list = mutableListOf<Post>()
-    const val MAXID = 1_000_000_000 // обусловленно предположением в 1 млрд постов
+    const val MAXID = 0 // обусловленно предположением в 1 млрд постов
 
     fun add(post: Post): Post {
         var id: Int
@@ -18,7 +18,7 @@ object WallService {
     fun update(post: Post): Boolean {
         for (postFromArr in list) {
             if (postFromArr.id == post.id) {
-                postFromArr.copy(
+                val copy = postFromArr.copy(
                     fromId = post.fromId,
                     createdBy = post.createdBy,
                     text = post.text,
@@ -40,7 +40,8 @@ object WallService {
                     isFavorite = post.isFavorite,
                     donut = post.donut,
                     postponedId = post.postponedId
-                    )
+                )
+                list.set(list.indexOf(postFromArr), copy)
                 return true
             }
         }

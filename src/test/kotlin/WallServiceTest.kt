@@ -139,8 +139,12 @@ class WallServiceTest {
             donut = Post.Donut(true, (0..10000).random(), Post.Donut.Placeholder(), true, ""),
             postponedId = (0..10000).random()
         )
+        var id: Int
+        do {
+            id = (0..WallService.MAXID).random()
+        } while (WallService.list.any { it.id == id })
         val post2 = Post(
-            id = 7,
+            id = id,
             ownerId = 1,
             fromId = (0..10000).random(),
             createdBy = (0..10000).random(),
