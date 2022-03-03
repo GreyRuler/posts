@@ -23,7 +23,7 @@ data class Post(
     val isFavorite: Boolean?,
     val donut: Donut,
     val postponedId: Int,
-    var attachment: Attachment
+    var attachment: List<Attachment>
 ) {
     data class Comment(
         val count: Int,
