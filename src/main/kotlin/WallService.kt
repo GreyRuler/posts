@@ -1,15 +1,10 @@
 object WallService {
 
     val list = mutableListOf<Post>()
-    const val MAXID = 1_000_000_000 // обусловленно предположением в 1 млрд постов
+    var ID = 0
 
     fun add(post: Post): Post {
-        var id: Int
-        do {
-            id = (0..MAXID).random()
-        } while (list.any { it.id == id })
-
-        val olderPost = post.copy(id = id)
+        val olderPost = post.copy(id = ID++)
         list.add(olderPost)
 
         return olderPost

@@ -141,7 +141,7 @@ class WallServiceTest {
         )
         var id: Int
         do {
-            id = (0..WallService.MAXID).random()
+            id = (0..1_000_000).random()
         } while (WallService.list.any { it.id == id })
         val post2 = Post(
             id = id,
