@@ -5,6 +5,11 @@ import org.junit.Assert.*
 
 class WallServiceTest {
 
+    @After
+    fun clearList() {
+        WallService.list.clear()
+    }
+
     @Test
     fun add_shouldAddPost() {
 
@@ -48,7 +53,8 @@ class WallServiceTest {
 
         val result = WallService.add(post)
 
-        assertNotEquals(result.id, 0)
+        assertTrue(WallService.list.isNotEmpty())
+        assertEquals(result.id, 1)
     }
 
     @Test
@@ -139,12 +145,8 @@ class WallServiceTest {
             donut = Post.Donut(true, (0..10000).random(), Post.Donut.Placeholder(), true, ""),
             postponedId = (0..10000).random()
         )
-        var id: Int
-        do {
-            id = (0..1_000_000).random()
-        } while (WallService.list.any { it.id == id })
         val post2 = Post(
-            id = id,
+            id = 2,
             ownerId = 1,
             fromId = (0..10000).random(),
             createdBy = (0..10000).random(),
@@ -185,10 +187,5 @@ class WallServiceTest {
         val resultFalse = WallService.update(post2)
 
         assertFalse(resultFalse)
-    }
-
-    @After
-    fun clearArray() {
-        WallService.list.clear()
     }
 }

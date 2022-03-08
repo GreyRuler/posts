@@ -4,7 +4,7 @@ object WallService {
     var ID = 0
 
     fun add(post: Post): Post {
-        val olderPost = post.copy(id = ID++)
+        val olderPost = post.copy(id = ++ID)
         list.add(olderPost)
 
         return olderPost
