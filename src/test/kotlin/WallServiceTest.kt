@@ -54,7 +54,7 @@ class WallServiceTest {
         val result = WallService.add(post)
 
         assertTrue(WallService.list.isNotEmpty())
-        assertEquals(result.id, 1)
+        assertNotEquals(result.id, 0)
     }
 
     @Test
