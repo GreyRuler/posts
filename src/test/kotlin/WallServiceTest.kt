@@ -8,11 +8,11 @@ class WallServiceTest {
     @After
     fun clearList() {
         WallService.list.clear()
+        WallService.ID = 0
     }
 
     @Test
     fun add_shouldAddPost() {
-
         val post = Post(
             id = 0,
             ownerId = 1,
@@ -59,7 +59,6 @@ class WallServiceTest {
 
     @Test
     fun update_shouldUpdatePostTrue() {
-
         val post = WallService.add(
             Post(
                 id = 0,
@@ -107,7 +106,6 @@ class WallServiceTest {
 
     @Test
     fun update_shouldUpdatePostFalse() {
-
         val post1 = Post(
             id = 0,
             ownerId = 1,

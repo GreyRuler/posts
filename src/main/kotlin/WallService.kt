@@ -36,7 +36,7 @@ object WallService {
                     donut = post.donut,
                     postponedId = post.postponedId
                 )
-                list.set(list.indexOf(postFromArr), copy)
+                list[list.indexOf(postFromArr)] = copy
                 return true
             }
         }
